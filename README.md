@@ -27,8 +27,8 @@
 
 ## **JavaScript en React**
 1. **Destructuring**
-   - Qué es y cómo aplicarlo.
-   - Uso en props y otros contextos.
+   - Qué es y cómo aplicarlo. ✅
+   - Uso en props y otros contextos. ✅
 
 2. **Template Literals vs. Curly Brackets**
    - Cuándo usar `template literals` (`\``).
