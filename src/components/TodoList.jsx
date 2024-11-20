@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Task from "./Task";
 import Summary from "./Summary";
+import Form from "./Form";
 
 const initialTasks = [
   {
@@ -59,6 +60,7 @@ function ToDoList() {
 
   return (
     <div>
+      <Form tasks={tasks} setTasks={setTasks} />
       <Summary tasksCompleted={tasksCompleted} />
 
       <div className="todo-container">
