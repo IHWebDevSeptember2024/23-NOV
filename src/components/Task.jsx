@@ -3,7 +3,12 @@
 import { useState } from "react";
 
 // LEVEL 3 (desctructuring en el parametro directamente, es locura)
-function Task({ task: { name, description, _id, isDone }, toggleTaskDone }) {
+function Task({
+  task: { name, description, _id, isDone },
+  toggleTaskDone,
+  setTasks,
+  tasks,
+}) {
   /*   const [taskCompleted, setTaskCompleted] = useState(false);
 
   const toggleTask = () => setTaskCompleted(!taskCompleted); */
@@ -20,6 +25,18 @@ function Task({ task: { name, description, _id, isDone }, toggleTaskDone }) {
   const { name, description } = props.task;
 */
 
+  function deleteTask(taskID) {
+    console.log("Delete task pulsado para borrar:", taskID);
+
+    const tasksCopy = tasks.filter((eachTask) => {
+      return eachTask._id !== taskID;
+    });
+
+    console.log(tasksCopy);
+
+    setTasks(tasksCopy);
+  }
+
   return (
     <div className="task-card">
       <div className="task-card-half">
@@ -35,6 +52,13 @@ function Task({ task: { name, description, _id, isDone }, toggleTaskDone }) {
           }}
         >
           {isDone ? <span>UNDO </span> : <span>✔️</span>}
+        </button>
+        <button
+          onClick={() => {
+            deleteTask(_id);
+          }}
+        >
+          🗑️
         </button>
       </div>
     </div>

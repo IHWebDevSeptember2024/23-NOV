@@ -65,7 +65,7 @@ function ToDoList() {
 
       <div className="todo-container">
         {tasks.map((task) => (
-          <Task key={task._id} task={task} toggleTaskDone={toggleTaskDone} />
+          <Task key={task._id} task={task} tasks={tasks} setTasks={setTasks} toggleTaskDone={toggleTaskDone} />
         ))}
         {/* 
         <Task task={tasks[0]} />
